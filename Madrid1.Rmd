@@ -1,0 +1,33 @@
+---
+title: "Dataset con la información de las paradas de metro de Madrid"
+author: "Team taquito"
+date: "9/6/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Informacion de paradas de metro de Madrid
+
+El lugar de donde se toma la información para analizar el Dataset relacionado con las paradas más relevantes dentro de Madrid provienen de la siguiente página:
+<https://www.adictosaltrabajo.com/2019/10/30/leer-un-json-con-r-rstudio/>.
+
+Lo primero que nosotros vamos a realizar será las peticiones API al servidor que contienen la información y algo muy importante es que las peticiones API las podemos hacer igual que una query SQL, pero en lugar de tener como resultado una dupla lo que vamos a tener es un archivo JSON. Esto permitiría cubrir los apartados de bases SQL Y JSON.
+La API correspondientes base:
+<https://idealista.carto.com:443/api/v2/sql?/>.
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
