@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ## Informacion de paradas de metro de Madrid
@@ -18,8 +18,15 @@ Lo primero que nosotros vamos a realizar será las peticiones API al servidor qu
 La API correspondientes base:
 <https://idealista.carto.com:443/api/v2/sql?/>.
 
-```{r cars}
-summary(cars)
+```{r}
+library(jsonlite)
+library(curl)
+library(readxl)
+library(shiny)
+q <- curl_escape("select ID, NAME, LINE, PLACE, LAT, LNG from public.paradas_metro_madrid")
+uri_paradas_metro <- paste("https://idealista.carto.com/api/v2/sql?q=",q, sep="")
+paradas_metro <- fromJSON(uri_paradas_metro)
+paradas_metro <- paradas_metro[["rows"]]
 ```
 
 ## Including Plots
